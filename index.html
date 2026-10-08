@@ -7,26 +7,30 @@
   <meta name="description" content="Partha Kanuparthy — computer systems, AI compilers, distributed systems, databases, and networking.">
   <link rel="canonical" href="https://p-kanuparthy.github.io/">
   <link rel="stylesheet" href="assets/css/fonts.css">
-  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/site.css?v=2">
 </head>
-<body>
-  <a class="skip-link" href="#content">Skip to content</a>
-  <div class="site" id="about">
+<body class="home page no-sidebar">
+  <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+  <div class="hfeed site" id="about">
     <header class="site-header">
+      <div class="site-branding">
       <h1 class="site-title"><a href="./">Partha Kanuparthy</a></h1>
-      <nav aria-label="Primary navigation"><ul>
-<li><a href="#about">About</a></li>
-<li><a href="#work">Work</a></li>
-<li><a href="#publications">Publications</a></li>
-<li><a href="#awards">Awards</a></li>
-<li><a href="#software">Software</a></li>
-<li><a href="#media">Media</a></li>
-<li><a href="#service">Service</a></li>
+      </div>
+      <nav class="main-navigation" aria-label="Primary navigation">
+        <button class="menu-toggle" aria-expanded="false" aria-controls="menu-primary">Menu</button>
+        <ul id="menu-primary" class="menu">
+<li class="current_page_item"><a href="#about">About</a></li>
+<li class="current_page_item"><a href="#work">Work</a></li>
+<li class="current_page_item"><a href="#publications">Publications</a></li>
+<li class="current_page_item"><a href="#awards">Awards</a></li>
+<li class="current_page_item"><a href="#software">Software</a></li>
+<li class="current_page_item"><a href="#media">Media</a></li>
+<li class="current_page_item"><a href="#service">Service</a></li>
       </ul></nav>
     </header>
-    <main id="content">
-      <a href="./"><img class="banner" src="assets/images/banner.jpg" width="937" height="217" alt="A cup of coffee on a wooden table"></a>
-      <article class="entry-content">
+    <div id="content" class="site-content">
+      <a href="./"><img class="custom-header" src="assets/images/banner.jpg" width="937" height="217" alt="A cup of coffee on a wooden table"></a>
+      <div class="content-area"><main class="site-main"><article class="hentry"><div class="entry-content">
 <p class="wp-block-paragraph">I build, analyze and optimize computer systems. I&#8217;ve worked across the stack, spanning large-scale distributed systems, databases, networks, architecture and AI systems. I&#8217;m currently working on the compiler stack for AI.</p>
 
 
@@ -222,8 +226,20 @@ Reviewer, USENIX Networked Systems Design and Implementation (NSDI), 2015.<br>
 Industry Track Chair, IEEE International Conference on Cloud Engineering, 2015.<br>
 Publication Chair, IEEE International Conference on Cloud Engineering, 2014.<br>
 Organizer, <a href="https://yahoodevelopers.tumblr.com/post/82130993953/yahoo-performance-summit-performance-matters">Yahoo Performance Summit</a>, 2014.</p>
-      </article>
-    </main>
+      </div></article></main></div>
+    </div>
   </div>
+<script>
+  const menuButton = document.querySelector('.menu-toggle');
+  const navigation = document.querySelector('.main-navigation');
+  menuButton.addEventListener('click', () => {
+    const expanded = navigation.classList.toggle('toggled');
+    menuButton.setAttribute('aria-expanded', String(expanded));
+  });
+  navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    navigation.classList.remove('toggled');
+    menuButton.setAttribute('aria-expanded', 'false');
+  }));
+</script>
 </body>
 </html>
