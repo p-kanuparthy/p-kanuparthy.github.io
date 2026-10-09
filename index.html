@@ -1,13 +1,19 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+    } catch (_) { /* Keep the default when storage is unavailable. */ }
+  </script>
   <title>Partha Kanuparthy</title>
   <meta name="description" content="Partha Kanuparthy — computer systems, AI compilers, distributed systems, databases, and networking.">
   <link rel="canonical" href="https://p-kanuparthy.github.io/">
   <link rel="stylesheet" href="assets/css/fonts.css">
-  <link rel="stylesheet" href="assets/css/site.css?v=3">
+  <link rel="stylesheet" href="assets/css/site.css?v=5">
 </head>
 <body class="home page no-sidebar">
   <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
@@ -15,6 +21,11 @@
     <header class="site-header">
       <div class="site-branding">
       <h1 class="site-title"><a href="./">Partha Kanuparthy</a></h1>
+      </div>
+      <a href="./"><img class="custom-header" src="assets/images/banner.jpg" width="937" height="217" alt="A cup of coffee on a wooden table"></a>
+      <div class="profile-links">
+        <a href="https://scholar.google.com/citations?user=plW73jYAAAAJ&amp;hl=en" aria-label="Google Scholar" title="Google Scholar"><img src="assets/images/google-scholar.svg" width="24" height="24" alt=""></a>
+        <a href="https://www.linkedin.com/in/partha-kanuparthy" aria-label="LinkedIn" title="LinkedIn"><img src="assets/images/linkedin.svg" width="24" height="24" alt=""></a>
       </div>
     </header>
       <nav class="main-navigation" aria-label="Primary navigation">
@@ -27,9 +38,13 @@
 <li><a href="#software">Software</a></li>
 <li><a href="#media">Media</a></li>
 <li><a href="#service">Service</a></li>
-      </ul></nav>
+      </ul>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <svg class="theme-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3l1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3l1.42-1.42"></path></svg>
+          <svg class="theme-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.9 13.2A9 9 0 0 1 10.8 3.1a9 9 0 1 0 10.1 10.1Z"></path></svg>
+        </button>
+      </nav>
     <div id="content" class="site-content">
-      <a href="./"><img class="custom-header" src="assets/images/banner.jpg" width="937" height="217" alt="A cup of coffee on a wooden table"></a>
       <div class="content-area"><main class="site-main"><article class="hentry"><div class="entry-content">
 <p class="wp-block-paragraph">I build, analyze and optimize computer systems. I&#8217;ve worked across the stack, spanning large-scale distributed systems, databases, networks, architecture and AI systems. I&#8217;m currently working on the compiler stack for AI.</p>
 
@@ -40,6 +55,8 @@
 
 
 <p class="wp-block-paragraph">My work on AI was featured in the McKinsey Technology Trends for 2024. I have been invited by the Federal Communications Commission, among others, to present my work. Recipient of the IRTF ANRP award for contributions to networking field in 2018. I&#8217;m a committer and founding engineer of OpenSearch.</p>
+
+
 
 
 
@@ -59,119 +76,119 @@
 
 
 
-<p class="wp-block-paragraph">&#8220;<a href="https://arxiv.org/pdf/2605.10905"><strong>TLX: Hardware-Native, Evolvable MIMW GPU Compiler for Large-scale Production Environments</strong></a>,&#8221; Yue Guan, Hongtao Yu, Peng Chen, Daohang Shi, Karthik Manivannan, Nick Riasanovsky, Manman Ren, Lei Wang, Shane Nay, Partha Kanuparthy, Zaifeng Pan, Zhengding Hu, Yufei Ding. arXiv preprint, May 2026.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<a href="https://arxiv.org/pdf/2605.10905"><strong>TLX: Hardware-Native, Evolvable MIMW GPU Compiler for Large-scale Production Environments</strong></a>,&#8221; arXiv preprint, May 2026.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<a href="https://pytorch.org/blog/warp-specialization-in-triton-design-and-roadmap/"><strong>Warp Specialization in Triton: Design and Roadmap</strong></a>,&#8221; Manman Ren, Nick Riasanovsky, Neil Dhar, Hongtao Yu, Jie Liu, Partha Kanuparthy, Shane Nay. PyTorch Blog, Jan. 2026.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<a href="https://pytorch.org/blog/warp-specialization-in-triton-design-and-roadmap/"><strong>Warp Specialization in Triton: Design and Roadmap</strong></a>,&#8221; PyTorch Blog, Jan. 2026.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<a href="https://arxiv.org/pdf/2512.14141"><strong>TorchTraceAP: A New Benchmark Dataset for Detecting Performance Anti-Patterns in Computer Vision Models</strong></a>,&#8221; Hanning Chen, Keyu Man, Kevin Zhu, Chenguang Zhu, Haonan Li, Tongbo Luo, Xizhou Feng, Wei Sun, Sreen Tallam, Mohsen Imani, Partha Kanuparthy. arXiv preprint, Dec. 2025.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<a href="https://arxiv.org/pdf/2512.14141"><strong>TorchTraceAP: A New Benchmark Dataset for Detecting Performance Anti-Patterns in Computer Vision Models</strong></a>,&#8221; arXiv preprint, Dec. 2025.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<a href="https://arxiv.org/pdf/2512.09196"><strong>TritonForge: Profiling-Guided Framework for Automated Triton Kernel Optimization</strong></a>,&#8221; Haonan Li, Keyu Man, Partha Kanuparthy, Hanning Chen, Wei Sun, Sreen Tallam, Chenguang Zhu, Kevin Zhu, Zhiyun Qian. arXiv preprint, Dec. 2025. Presented at IEEE/ACM ICSE&#8217;26 workshop LLM4Code.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<a href="https://arxiv.org/pdf/2512.09196"><strong>TritonForge: Profiling-Guided Framework for Automated Triton Kernel Optimization</strong></a>,&#8221; arXiv preprint, Dec. 2025. Presented at IEEE/ACM ICSE&#8217;26 workshop LLM4Code.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/pytorchconf-2024_aiei.pdf">PyTorch Performance Debugging in N-Dimensional Parallelism</a></strong>,&#8221; Wei Sun, Keyu Man, Ji Yang, Chenguang Zhu, Partha Kanuparthy, Sreen Tallam, Adwait Sathye. PyTorch Conference, Sept. 2024. (Won best poster award.)</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/pytorchconf-2024_aiei.pdf">PyTorch Performance Debugging in N-Dimensional Parallelism</a></strong>,&#8221; PyTorch Conference, Sept. 2024. (Won best poster award.)</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<a href="https://devops.com/building-a-new-toolkit-to-ensure-accurate-ai-predictions/"><strong>Building A New Toolkit to Ensure Accurate AI Predictions</strong></a>,&#8221; Partha Kanuparthy, Srikanth Kamath, Animesh Dalakoti. DevOps.com, June 2024.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<a href="https://devops.com/building-a-new-toolkit-to-ensure-accurate-ai-predictions/"><strong>Building A New Toolkit to Ensure Accurate AI Predictions</strong></a>,&#8221; DevOps.com, June 2024.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<a href="https://engineering.fb.com/2024/03/18/data-infrastructure/logarithm-logging-engine-ai-training-workflows-services-meta/"><strong>Logarithm: A Logging Engine for AI Training Workflows and Services</strong></a>,&#8221; Partha Kanuparthy, Raunak Rungta, Shyam Sundar Chandrasekaran, Junnan Wan (and the entire team), Meta Engineering Blog, Mar 2024.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<a href="https://engineering.fb.com/2024/03/18/data-infrastructure/logarithm-logging-engine-ai-training-workflows-services-meta/"><strong>Logarithm: A Logging Engine for AI Training Workflows and Services</strong></a>,&#8221; Meta Engineering Blog, Mar 2024.</p>
 
 
 
-<p class="wp-block-paragraph">”<a href="https://engineering.fb.com/2023/12/19/data-infrastructure/hawkeye-ai-debugging-meta/"><strong>AI Debugging at Meta with HawkEye,</strong></a>” Partha Kanuparthy, Animesh Dalakoti, Srikanth Kamath (and the entire team), Meta Engineering Blog, Dec 2023. (A part of the <a href="https://engineering.fb.com/2024/07/10/data-infrastructure/machine-learning-ml-prediction-robustness-meta/">ML Prediction Robustness</a> effort.)</p>
+<p class="wp-block-paragraph publication-entry">”<a href="https://engineering.fb.com/2023/12/19/data-infrastructure/hawkeye-ai-debugging-meta/"><strong>AI Debugging at Meta with HawkEye,</strong></a>” Meta Engineering Blog, Dec 2023. (A part of the <a href="https://engineering.fb.com/2024/07/10/data-infrastructure/machine-learning-ml-prediction-robustness-meta/">ML Prediction Robustness</a> effort.)</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<a href="https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11741096"><strong>Granular Performance Analysis for Database Queries</strong></a>,&#8221; US Patent 11741096, Aug 2023.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<a href="https://image-ppubs.uspto.gov/dirsearch-public/print/downloadPdf/11741096"><strong>Granular Performance Analysis for Database Queries</strong></a>,&#8221; US Patent 11741096, Aug 2023.</p>
 
 
 
-<p class="wp-block-paragraph">“<a href="https://www.youtube.com/watch?v=5hhZopD_vVM"><strong>ML Monitoring and Observability at Meta Scale</strong></a>,” Partha Kanuparthy, Animesh Dalakoti and Kunal Bhalla. Data@Scale 2022.</p>
+<p class="wp-block-paragraph publication-entry">“<a href="https://www.youtube.com/watch?v=5hhZopD_vVM"><strong>ML Monitoring and Observability at Meta Scale</strong></a>,” Data@Scale 2022.</p>
 
 
 
-<p class="wp-block-paragraph"><strong><a href="https://www.usenix.org/conference/srecon21/presentation/panel-observability">Observability</a></strong> (Panel), USENIX SRECon 2021.</p>
+<p class="wp-block-paragraph publication-entry"><strong><a href="https://www.usenix.org/conference/srecon21/presentation/panel-observability">Observability</a></strong> (Panel), USENIX SRECon 2021.</p>
 
 
 
-<p class="wp-block-paragraph">(Systems summary) &#8220;<a href="https://aws.amazon.com/blogs/big-data/detect-anomalies-on-one-million-unique-entities-with-amazon-opensearch-service/"><strong>Detect Anomalies on One Million Unique Entities in Amazon OpenSearch Service</strong></a>,&#8221; AWS Big Data Blog, 2021.</p>
+<p class="wp-block-paragraph publication-entry">(Systems summary) &#8220;<a href="https://aws.amazon.com/blogs/big-data/detect-anomalies-on-one-million-unique-entities-with-amazon-opensearch-service/"><strong>Detect Anomalies on One Million Unique Entities in Amazon OpenSearch Service</strong></a>,&#8221; AWS Big Data Blog, 2021.</p>
 
 
 
-<p class="wp-block-paragraph">(Product announcement) &#8220;<a href="https://aws.amazon.com/blogs/big-data/introducing-auto-tune-in-amazon-es/"><strong>Introducing Auto-Tune in Amazon Elasticsearch</strong></a>,&#8221; AWS Big Data Blog, 2021.</p>
+<p class="wp-block-paragraph publication-entry">(Product announcement) &#8220;<a href="https://aws.amazon.com/blogs/big-data/introducing-auto-tune-in-amazon-es/"><strong>Introducing Auto-Tune in Amazon Elasticsearch</strong></a>,&#8221; AWS Big Data Blog, 2021.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="https://opendistro.github.io/for-elasticsearch/blog/odfe-updates/2019/12/real-time-root-cause-analysis-in-open-distro-for-elasticsearch/">Real Time Root Cause Analysis in Open Distro for Elasticsearch</a></strong>,&#8221; with &nbsp;Joydeep Sinha, Karthik Kumarguru, Adithya Chandra and Balaji Kannan. Open Distro for Elasticsearch Blog, 2019.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="https://opendistro.github.io/for-elasticsearch/blog/odfe-updates/2019/12/real-time-root-cause-analysis-in-open-distro-for-elasticsearch/">Real Time Root Cause Analysis in Open Distro for Elasticsearch</a></strong>,&#8221; Open Distro for Elasticsearch Blog, 2019.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="https://opendistro.github.io/for-elasticsearch/blog/odfe-updates/2019/11/real-time-anomaly-detection-in-open-distro-for-elasticsearch/">Real Time Anomaly Detection in Open Distro for Elasticsearch</a></strong>,&#8221; Partha Kanuparthy. Open Distro for Elasticsearch Blog, 2019.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="https://opendistro.github.io/for-elasticsearch/blog/odfe-updates/2019/11/real-time-anomaly-detection-in-open-distro-for-elasticsearch/">Real Time Anomaly Detection in Open Distro for Elasticsearch</a></strong>,&#8221; Open Distro for Elasticsearch Blog, 2019.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<span style="color:var(--color-text)"><strong><a href="files/ato19.pdf">Real Time Performance Diagnosis and Machine Learning in Distributed Databases</a></strong>,&#8221; Partha Kanuparthy, Alolita Sharma. All Things Open 2019.</span></p>
+<p class="wp-block-paragraph publication-entry">&#8220;<span style="color:var(--color-text)"><strong><a href="files/ato19.pdf">Real Time Performance Diagnosis and Machine Learning in Distributed Databases</a></strong>,&#8221; All Things Open 2019.</span></p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<span style="color:var(--color-text)"><strong><a href="files/apachecon19.pdf">Real Time Performance Diagnosis in Distributed Databases</a></strong>,&#8221; Partha Kanuparthy, Alolita Sharma. ApacheCon 2019 (20th anniversary of Apache Software Foundation).</span></p>
+<p class="wp-block-paragraph publication-entry">&#8220;<span style="color:var(--color-text)"><strong><a href="files/apachecon19.pdf">Real Time Performance Diagnosis in Distributed Databases</a></strong>,&#8221; ApacheCon 2019 (20th anniversary of Apache Software Foundation).</span></p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/1602-03273v3.pdf">YTrace: End-to-end Performance Diagnosis in Large Cloud and Content Providers</a></strong>,&#8221;&nbsp;Partha Kanuparthy, Yuchen Dai, Sudhir Pathak, Sambit Samal, Theophilus Benson, Mojgan Ghasemi, P. P. S. Narayan. arXiv preprint 1602.03273, 2016.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/1602-03273v3.pdf">YTrace: End-to-end Performance Diagnosis in Large Cloud and Content Providers</a></strong>,&#8221; arXiv preprint, 2016.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/1605-04966.pdf">Performance Characterization of a Commercial Video Streaming Service</a></strong>,&#8221;&nbsp;Mojgan Ghasemi, Partha Kanuparthy, Ahmed Mansy, Theophilus Benson, Jennifer Rexford.&nbsp;ACM IMC 2016.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/1605-04966.pdf">Performance Characterization of a Commercial Video Streaming Service</a></strong>,&#8221; ACM IMC 2016.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/1605-06150.pdf">Finding Needles in the Haystack: Harnessing Syslogs for Data Center Management</a></strong>,&#8221;&nbsp;Chen Liang, Theophilus Benson, Partha Kanuparthy, Yihua He.&nbsp;arXiv preprint 1605.06150, 2016.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/1605-06150.pdf">Finding Needles in the Haystack: Harnessing Syslogs for Data Center Management</a></strong>,&#8221; arXiv preprint, 2016.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/atc14-final183.pdf">Pythia: Diagnosing performance problems in wide area providers</a></strong>,&#8221;&nbsp;Partha Kanuparthy, Constantine Dovrolis. USENIX ATC 2014.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/atc14-final183.pdf">Pythia: Diagnosing performance problems in wide area providers</a></strong>,&#8221; USENIX ATC 2014.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/06658653.pdf">Pythia: detection, localization, and diagnosis of performance problems</a></strong>,&#8221; Partha Kanuparthy, Danny H Lee, Warren Matthews, Constantine Dovrolis, Sajjad Zarifzadeh. IEEE Communications Magazine 2013.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/06658653.pdf">Pythia: detection, localization, and diagnosis of performance problems</a></strong>,&#8221; IEEE Communications Magazine 2013.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/thesis.pdf">End-to-end Inference of Internet Performance Problems</a></strong>,&#8221; Partha Kanuparthy. Ph.D. dissertation, 2012.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/thesis.pdf">End-to-end Inference of Internet Performance Problems</a></strong>,&#8221; Ph.D. dissertation, 2012.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/1205-0820.pdf">DNS-based Ingress Load Balancing: An Experimental Evaluation</a></strong>,&#8221; Partha Kanuparthy, Warren Matthews, Constantine Dovrolis.&nbsp;arXiv preprint 1205.0820, 2012.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/1205-0820.pdf">DNS-based Ingress Load Balancing: An Experimental Evaluation</a></strong>,&#8221; arXiv preprint, 2012.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/1108-2070.pdf">Can user-level probing detect and diagnose common home-WLAN pathologies</a></strong>,&#8221; Partha Kanuparthy, Constantine Dovrolis, Konstantina Papagiannaki, Srinivasan Seshan, Peter Steenkiste. ACM SIGCOMM CCR 2012.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/1108-2070.pdf">Can user-level probing detect and diagnose common home-WLAN pathologies</a></strong>,&#8221; ACM SIGCOMM CCR 2012.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/shaperprobe-imc11.pdf">ShaperProbe: end-to-end detection of ISP traffic shaping using active methods</a></strong>,&#8221; Partha Kanuparthy, Constantine Dovrolis. ACM IMC 2012.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/shaperprobe-imc11.pdf">ShaperProbe: end-to-end detection of ISP traffic shaping using active methods</a></strong>,&#8221; ACM IMC 2012.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/shaperprobe-tr.pdf">End-to-end detection of ISP traffic shaping using active and passive methods</a></strong>,&#8221; Partha Kanuparthy, Constantine Dovrolis. Tech report 2011.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/shaperprobe-tr.pdf">End-to-end detection of ISP traffic shaping using active and passive methods</a></strong>,&#8221; Tech report 2011.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/diffprobe-infocom10.pdf">DiffProbe: detecting ISP service discrimination</a></strong>,&#8221; Partha Kanuparthy, Constantine Dovrolis. IEEE INFOCOM 2010.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/diffprobe-infocom10.pdf">DiffProbe: detecting ISP service discrimination</a></strong>,&#8221; IEEE INFOCOM 2010.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/spectral-probing-imc08-final.pdf">Spectral probing, crosstalk and frequency multiplexing in Internet paths</a></strong>,&#8221; Partha Kanuparthy, Constantine Dovrolis, Mostafa Ammar. ACM IMC 2008.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/spectral-probing-imc08-final.pdf">Spectral probing, crosstalk and frequency multiplexing in Internet paths</a></strong>,&#8221; ACM IMC 2008.</p>
 
 
 
@@ -179,15 +196,15 @@
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/cscwf630.pdf">Understanding Online Reviews: Funny, Cool or Useful?</a></strong>,&#8221; Saeideh Bakhshi, Partha Kanuparthy, Ayman Shamma. ACM CSCW 2015.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/cscwf630.pdf">Understanding Online Reviews: Funny, Cool or Useful?</a></strong>,&#8221; ACM CSCW 2015.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/main3.pdf">If it is funny, it is mean: Understanding social perceptions of Yelp online reviews</a></strong>,&#8221;&nbsp;Saeideh Bakhshi, Partha Kanuparthy, Ayman Shamma. ACM Group&nbsp;2014.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/main3.pdf">If it is funny, it is mean: Understanding social perceptions of Yelp online reviews</a></strong>,&#8221; ACM Group&nbsp;2014.</p>
 
 
 
-<p class="wp-block-paragraph">&#8220;<strong><a href="files/www2014bakhshi.pdf">Demographics, weather and online reviews: A study of restaurant recommendations</a></strong>,&#8221;&nbsp;Saeideh Bakhshi, Partha Kanuparthy, Eric Gilbert. WWW 2014.</p>
+<p class="wp-block-paragraph publication-entry">&#8220;<strong><a href="files/www2014bakhshi.pdf">Demographics, weather and online reviews: A study of restaurant recommendations</a></strong>,&#8221; WWW 2014.</p>
 
 
 
@@ -195,7 +212,11 @@
 
 
 
-<p class="wp-block-paragraph">Best poster award, PyTorch Conference 2024.<br>IRTF Applied Networking Research Prize (ANRP) 2018.<br> Best Research Award, Open Internet Applications Challenge, Federal Communications Commission (FCC) 2011.</p>
+<div class="entry-list">
+<p class="list-entry">Best poster award, PyTorch Conference 2024.</p>
+<p class="list-entry">IRTF Applied Networking Research Prize (ANRP) 2018.</p>
+<p class="list-entry">Best Research Award, Open Internet Applications Challenge, Federal Communications Commission (FCC) 2011.</p>
+</div>
 
 
 
@@ -211,7 +232,20 @@
 
 
 
-<p class="wp-block-paragraph">McKinsey Technology Trends Outlook 2024 recognized HawkEye.<br>“Online Reviews? Keep This in Mind,” New York Times, 2014.<br> “Rainy Days can Lower a Restaurant’s Online Ratings. Watch out Seattle Eateries!,” Seattle Times,&nbsp;2014.<br> “FCC Contest Stimulates Development of Apps to Help Keep ISPs Honest,” O’Reilly Media, 2011.<br> “Contest Shines Light on Broadband Providers’ Tactics,” PCWorld, Aug. 2011.<br> “PowerBoost: A Comcast Innovation for High-Speed Internet Users,” Comcast Blog, Aug. 2011.<br> “M-Lab Collaboration with ShaperProbe Shows That More Must Be Done to Help Consumers,” New America Foundation, June 2011.<br> “New ’ShaperProbe’ tool detects ISP traffic shaping,” Ars Technica, May 2011.<br> “Georgia Tech’s ShaperProbe Detects ISP Traffic Manipulation,” Slashdot, May 2011.<br> “Tool reveals ISP traffic-shaping,” boing boing, May 2011.<br> “Google Launches M-Lab Measurement Tools,” NetworkWorld, Jan. 2009.<br> “Google and Friends Release Net Neutrality Measuring Tools,” Slashdot, Jan. 2009.</p>
+<div class="entry-list">
+<p class="list-entry">McKinsey Technology Trends Outlook 2024 recognized HawkEye.</p>
+<p class="list-entry">“Online Reviews? Keep This in Mind,” New York Times, 2014.</p>
+<p class="list-entry">“Rainy Days can Lower a Restaurant’s Online Ratings. Watch out Seattle Eateries!,” Seattle Times,&nbsp;2014.</p>
+<p class="list-entry">“FCC Contest Stimulates Development of Apps to Help Keep ISPs Honest,” O’Reilly Media, 2011.</p>
+<p class="list-entry">“Contest Shines Light on Broadband Providers’ Tactics,” PCWorld, Aug. 2011.</p>
+<p class="list-entry">“PowerBoost: A Comcast Innovation for High-Speed Internet Users,” Comcast Blog, Aug. 2011.</p>
+<p class="list-entry">“M-Lab Collaboration with ShaperProbe Shows That More Must Be Done to Help Consumers,” New America Foundation, June 2011.</p>
+<p class="list-entry">“New ’ShaperProbe’ tool detects ISP traffic shaping,” Ars Technica, May 2011.</p>
+<p class="list-entry">“Georgia Tech’s ShaperProbe Detects ISP Traffic Manipulation,” Slashdot, May 2011.</p>
+<p class="list-entry">“Tool reveals ISP traffic-shaping,” boing boing, May 2011.</p>
+<p class="list-entry">“Google Launches M-Lab Measurement Tools,” NetworkWorld, Jan. 2009.</p>
+<p class="list-entry">“Google and Friends Release Net Neutrality Measuring Tools,” Slashdot, Jan. 2009.</p>
+</div>
 
 
 
@@ -230,6 +264,20 @@ Organizer, <a href="https://yahoodevelopers.tumblr.com/post/82130993953/yahoo-pe
     </div>
   </div>
 <script>
+  const themeButton = document.querySelector('.theme-toggle');
+  function updateThemeButton() {
+    const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    themeButton.setAttribute('aria-label', `Switch to ${nextTheme} mode`);
+    themeButton.title = `Switch to ${nextTheme} mode`;
+  }
+  themeButton.addEventListener('click', () => {
+    const theme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem('theme', theme); } catch (_) { /* Toggling still works without storage. */ }
+    updateThemeButton();
+  });
+  updateThemeButton();
+
   const menuButton = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('.main-navigation');
   menuButton.addEventListener('click', () => {
@@ -250,7 +298,7 @@ Organizer, <a href="https://yahoodevelopers.tumblr.com/post/82130993953/yahoo-pe
 
   function updateCurrentSection() {
     // Use the collapsed menu height so opening the mobile menu does not change the section.
-    const menuHeight = menuButton.offsetHeight ? menuButton.offsetHeight + 30 : navigation.offsetHeight;
+    const menuHeight = menuButton.offsetHeight ? Math.max(menuButton.offsetHeight, themeButton.offsetHeight) + 30 : navigation.offsetHeight;
     document.documentElement.style.setProperty('--navigation-offset', `${menuHeight + 16}px`);
     let current = sections[0];
     for (const section of sections) {
