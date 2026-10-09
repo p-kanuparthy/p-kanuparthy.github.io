@@ -255,7 +255,20 @@ h1, h2, h3, h4, h5, h6 { font-family: "Roboto Slab", serif; font-style: normal; 
 .site-title { font-style: normal; font-weight: 400; }
 html { scroll-behavior: smooth; }
 a:focus-visible { outline: 2px solid #1c7c7c; outline-offset: 4px; }
-h2, h3, a[name] { scroll-margin-top: 24px; }
+h2, h3, a[name] { scroll-margin-top: var(--navigation-offset, 90px); }
+.site-header { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+.main-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 27px;
+  border-bottom: 3px solid #eee;
+  background: white;
+}
+.main-navigation a[aria-current="location"] { font-weight: 700; color: #1c7c7c; }
+.main-navigation.toggled .menu { display: block; max-height: 70vh; overflow-y: auto; }
 .menu-toggle:before { content: "☰"; font-family: sans-serif; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print { body { background: white; } .site { margin: 0; padding: 0; max-width: none; } .main-navigation, .skip-link { display: none; } }

@@ -7,7 +7,7 @@
   <meta name="description" content="Partha Kanuparthy — computer systems, AI compilers, distributed systems, databases, and networking.">
   <link rel="canonical" href="https://p-kanuparthy.github.io/">
   <link rel="stylesheet" href="assets/css/fonts.css">
-  <link rel="stylesheet" href="assets/css/site.css?v=2">
+  <link rel="stylesheet" href="assets/css/site.css?v=3">
 </head>
 <body class="home page no-sidebar">
   <a class="skip-link screen-reader-text" href="#content">Skip to content</a>
@@ -16,18 +16,18 @@
       <div class="site-branding">
       <h1 class="site-title"><a href="./">Partha Kanuparthy</a></h1>
       </div>
+    </header>
       <nav class="main-navigation" aria-label="Primary navigation">
         <button class="menu-toggle" aria-expanded="false" aria-controls="menu-primary">Menu</button>
         <ul id="menu-primary" class="menu">
-<li class="current_page_item"><a href="#about">About</a></li>
-<li class="current_page_item"><a href="#work">Work</a></li>
-<li class="current_page_item"><a href="#publications">Publications</a></li>
-<li class="current_page_item"><a href="#awards">Awards</a></li>
-<li class="current_page_item"><a href="#software">Software</a></li>
-<li class="current_page_item"><a href="#media">Media</a></li>
-<li class="current_page_item"><a href="#service">Service</a></li>
+<li><a href="#about" aria-current="location">About</a></li>
+<li><a href="#work">Work</a></li>
+<li><a href="#publications">Publications</a></li>
+<li><a href="#awards">Awards</a></li>
+<li><a href="#software">Software</a></li>
+<li><a href="#media">Media</a></li>
+<li><a href="#service">Service</a></li>
       </ul></nav>
-    </header>
     <div id="content" class="site-content">
       <a href="./"><img class="custom-header" src="assets/images/banner.jpg" width="937" height="217" alt="A cup of coffee on a wooden table"></a>
       <div class="content-area"><main class="site-main"><article class="hentry"><div class="entry-content">
@@ -55,7 +55,7 @@
 
 
 
-<h3 id="systems-databases-ml-and-networking" class="wp-block-heading">Systems, databases, ML and networking</h3>
+<h3 id="systems-databases-ml-and-networking" class="wp-block-heading">AI systems and compilers, databases, networking</h3>
 
 
 
@@ -175,7 +175,7 @@
 
 
 
-<h3 id="online-user-behavior" class="wp-block-heading">Online user behavior</h3>
+<h3 id="online-user-behavior" class="wp-block-heading">ML for online user behavior</h3>
 
 
 
@@ -188,6 +188,14 @@
 
 
 <p class="wp-block-paragraph">&#8220;<strong><a href="files/www2014bakhshi.pdf">Demographics, weather and online reviews: A study of restaurant recommendations</a></strong>,&#8221;&nbsp;Saeideh Bakhshi, Partha Kanuparthy, Eric Gilbert. WWW 2014.</p>
+
+
+
+<h2 id="awards" class="wp-block-heading"><a name="awards"></a>Awards</h2>
+
+
+
+<p class="wp-block-paragraph">Best poster award, PyTorch Conference 2024.<br>IRTF Applied Networking Research Prize (ANRP) 2018.<br> Best Research Award, Open Internet Applications Challenge, Federal Communications Commission (FCC) 2011.</p>
 
 
 
@@ -204,14 +212,6 @@
 
 
 <p class="wp-block-paragraph">McKinsey Technology Trends Outlook 2024 recognized HawkEye.<br>“Online Reviews? Keep This in Mind,” New York Times, 2014.<br> “Rainy Days can Lower a Restaurant’s Online Ratings. Watch out Seattle Eateries!,” Seattle Times,&nbsp;2014.<br> “FCC Contest Stimulates Development of Apps to Help Keep ISPs Honest,” O’Reilly Media, 2011.<br> “Contest Shines Light on Broadband Providers’ Tactics,” PCWorld, Aug. 2011.<br> “PowerBoost: A Comcast Innovation for High-Speed Internet Users,” Comcast Blog, Aug. 2011.<br> “M-Lab Collaboration with ShaperProbe Shows That More Must Be Done to Help Consumers,” New America Foundation, June 2011.<br> “New ’ShaperProbe’ tool detects ISP traffic shaping,” Ars Technica, May 2011.<br> “Georgia Tech’s ShaperProbe Detects ISP Traffic Manipulation,” Slashdot, May 2011.<br> “Tool reveals ISP traffic-shaping,” boing boing, May 2011.<br> “Google Launches M-Lab Measurement Tools,” NetworkWorld, Jan. 2009.<br> “Google and Friends Release Net Neutrality Measuring Tools,” Slashdot, Jan. 2009.</p>
-
-
-
-<h2 id="awards" class="wp-block-heading"><a name="awards"></a>Awards</h2>
-
-
-
-<p class="wp-block-paragraph">Best poster award, PyTorch Conference 2024.<br>IRTF Applied Networking Research Prize (ANRP) 2018.<br> Best Research Award, Open Internet Applications Challenge, Federal Communications Commission (FCC) 2011.</p>
 
 
 
@@ -240,6 +240,44 @@ Organizer, <a href="https://yahoodevelopers.tumblr.com/post/82130993953/yahoo-pe
     navigation.classList.remove('toggled');
     menuButton.setAttribute('aria-expanded', 'false');
   }));
+
+  const sectionLinks = Array.from(navigation.querySelectorAll('a'));
+  const sections = sectionLinks.map(link => {
+    const id = link.hash.slice(1);
+    const target = document.getElementById(id) || document.querySelector(`a[name="${id}"]`);
+    return { link, target: target.closest('h2') || target };
+  }).sort((a, b) => a.target.compareDocumentPosition(b.target) & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1);
+
+  function updateCurrentSection() {
+    // Use the collapsed menu height so opening the mobile menu does not change the section.
+    const menuHeight = menuButton.offsetHeight ? menuButton.offsetHeight + 30 : navigation.offsetHeight;
+    document.documentElement.style.setProperty('--navigation-offset', `${menuHeight + 16}px`);
+    let current = sections[0];
+    for (const section of sections) {
+      if (section.target.getBoundingClientRect().top <= menuHeight + 24) current = section;
+    }
+    if (window.scrollY > 0 && window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      current = sections[sections.length - 1];
+    }
+    for (const { link } of sections) {
+      if (link === current.link) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    }
+  }
+
+  let sectionUpdatePending = false;
+  window.addEventListener('scroll', () => {
+    if (sectionUpdatePending) return;
+    sectionUpdatePending = true;
+    requestAnimationFrame(() => {
+      updateCurrentSection();
+      sectionUpdatePending = false;
+    });
+  }, { passive: true });
+  window.addEventListener('resize', updateCurrentSection);
+  window.addEventListener('load', updateCurrentSection);
+  document.fonts.ready.then(updateCurrentSection);
+  updateCurrentSection();
 </script>
 </body>
 </html>
