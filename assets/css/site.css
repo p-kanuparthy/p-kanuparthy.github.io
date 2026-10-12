@@ -336,7 +336,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--color-link); ou
 .entry-content h2 { font-size: 1.15em; line-height: 1.4; }
 .entry-content h3 { font-size: 1.08em; line-height: 1.4; }
 .entry-content h4, .entry-content h5, .entry-content h6 { font-size: 1.04em; line-height: 1.4; }
-.entry-content .publication-entry, .entry-content .list-entry { line-height: 1.7; margin-bottom: .3em; }
+.entry-content .publication-entry, .entry-content .list-entry { line-height: 1.8; margin-bottom: .5em; }
 .entry-list { margin-bottom: 24px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
